@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Blog</title>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper navbar-fixed">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ieee.html">IEEE</a></li>
+            <li><a href="pulse.html">Pulse</a></li>
+            <li><a href="iris.html">IRIS</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <script>
+
+        let pulseblogs = async ()=> {
+            const res = await fetch("/pulse");
+            const json = await res.json();
+
+            json.array.forEach(element => {
+                rowd = document.createElement("div")
+                rowd.classList.add("row")
+                cold = document.createElement("div")
+                cold.classList.add("col s12 m6")
+                card = document.createElement("div")
+                card.classList.add("card blue-grey darken-1")
+                con = document.createElement("div")
+                con.classList.add("card-content white-text")
+                sp = document.createElement("span")
+                sp.classList.add("card-title")
+                sp.innerHTML = element.blognames;
+                act = 
+            });
+            return json;
+        }
+    </script>
+</body>
+</html>
