@@ -40,7 +40,20 @@
                 sp = document.createElement("span")
                 sp.classList.add("card-title")
                 sp.innerHTML = element.blognames;
-                act = 
+                act = document.createElement("div")
+                act.classList.add("card-action")
+                lin = document.createElement("a")
+                lin.href = element.blogLinks
+
+                act.appendChild(lin)
+                con.appendChild(sp)
+                card.appendChild(act)
+                card.appendChild(con)
+
+                cold.appendChild(card)
+                rowd.appendChild(cold)
+                document.body.appendChild(rowd)
+                
             });
             return json;
         }
