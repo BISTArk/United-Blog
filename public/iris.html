@@ -22,5 +22,42 @@
         </div>
       </nav>
 
+      <script>
+
+        let irisblogs = async ()=> {
+            const res = await fetch("/iris");
+            const json = await res.json();
+
+            for(element of json)  {
+                rowd = document.createElement("div")
+                rowd.classList.add("row")
+                cold = document.createElement("div")
+                cold.classList.add("col s12 m6")
+                card = document.createElement("div")
+                card.classList.add("card blue-grey darken-1")
+                con = document.createElement("div")
+                con.classList.add("card-content white-text")
+                sp = document.createElement("span")
+                sp.classList.add("card-title")
+                sp.innerHTML = element.blognames;
+                act = document.createElement("div")
+                act.classList.add("card-action")
+                lin = document.createElement("a")
+                lin.href = element.blogLinks
+
+                act.appendChild(lin)
+                con.appendChild(sp)
+                card.appendChild(act)
+                card.appendChild(con)
+
+                cold.appendChild(card)
+                rowd.appendChild(cold)
+                document.body.appendChild(rowd)
+                
+            }
+        }
+        irisblogs();
+    </script>
+
 </body>
 </html>

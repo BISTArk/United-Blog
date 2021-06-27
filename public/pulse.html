@@ -28,7 +28,7 @@
             const res = await fetch("/pulse");
             const json = await res.json();
 
-            json.array.forEach(element => {
+            for(element of json) {
                 rowd = document.createElement("div")
                 rowd.classList.add("row")
                 cold = document.createElement("div")
@@ -54,9 +54,9 @@
                 rowd.appendChild(cold)
                 document.body.appendChild(rowd)
                 
-            });
-            return json;
+            }
         }
+        pulseblogs();
     </script>
 </body>
 </html>

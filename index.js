@@ -47,8 +47,8 @@ let iris = async (siteUrl) => {
     let blognames = [];
   
     $(".entry-title").each((i, element) => {
-      let element1 = $(element).find(a).attr("href");
-      let element1 = $(element).find(a).text();
+      let element1 = $(element).find("a").attr("href");
+      let element2 = $(element).find("a").text();
     
         element2 = element2.replace(/\t+/g, "");
         blogLinks.push(element1);
@@ -59,7 +59,7 @@ let iris = async (siteUrl) => {
     return { blogLinks: blogLinks, blognames: blognames };
   };
 
-  let pulse = async (siteUrl) => {
+  let ieee = async (siteUrl) => {
     const response = await axios.get(siteUrl);
     const html = response.data;
     // console.log(html);
